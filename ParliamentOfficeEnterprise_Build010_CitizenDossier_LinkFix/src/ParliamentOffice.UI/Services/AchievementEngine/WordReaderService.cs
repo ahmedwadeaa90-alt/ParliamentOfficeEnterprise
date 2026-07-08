@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-
-namespace ParliamentOffice.UI.Services.AchievementEngine
-{
-    internal class WordReaderService
-    {
-    }
-}
-using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
@@ -39,7 +26,6 @@ namespace ParliamentOffice.UI.Services.AchievementEngine
             foreach (var paragraph in body.Descendants<Paragraph>())
             {
                 var text = paragraph.InnerText?.Trim();
-
                 if (!string.IsNullOrWhiteSpace(text))
                     builder.AppendLine(text);
             }
@@ -61,14 +47,12 @@ namespace ParliamentOffice.UI.Services.AchievementEngine
         public string ExtractTitle(string filePath)
         {
             var paragraphs = ReadParagraphs(filePath);
-
             return paragraphs.FirstOrDefault() ?? Path.GetFileNameWithoutExtension(filePath);
         }
 
         public string ExtractSummary(string filePath, int maxParagraphs = 4)
         {
             var paragraphs = ReadParagraphs(filePath);
-
             return string.Join(Environment.NewLine, paragraphs.Take(maxParagraphs));
         }
     }

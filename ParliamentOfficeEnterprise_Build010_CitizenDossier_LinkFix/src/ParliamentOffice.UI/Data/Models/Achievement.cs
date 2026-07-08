@@ -4,12 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ParliamentOffice.UI.Data.Models
-{
-    internal class Achievement
-    {
-    }
-}
 using System;
 
 namespace ParliamentOffice.UI.Data.Models
