@@ -1,0 +1,35 @@
+<Window x:Class="ParliamentOffice.UI.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="تسجيل الدخول" Height="470" Width="620" WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft" FontFamily="Segoe UI" ResizeMode="NoResize" Background="#F4F6F8">
+    <Grid Margin="28">
+        <Border Background="White" CornerRadius="16" Padding="28" BorderBrush="#DDD" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="منظومة الإدارة البرلمانية الذكية" FontSize="27" FontWeight="Bold" TextAlignment="Center" Foreground="#1F2937"/>
+                <TextBlock Grid.Row="1" Text="Parliament Office Enterprise - Local V1" FontSize="15" TextAlignment="Center" Foreground="#6B7280" Margin="0,8,0,24"/>
+
+                <StackPanel Grid.Row="2">
+                    <TextBlock Text="اسم المستخدم" FontWeight="SemiBold" Margin="4,0,4,0"/>
+                    <TextBox x:Name="UsernameBox" Text="admin" Height="42"/>
+                    <TextBlock Text="كلمة المرور" FontWeight="SemiBold" Margin="4,10,4,0"/>
+                    <PasswordBox x:Name="PasswordBox" Password="1234" Height="42" KeyDown="PasswordBox_KeyDown"/>
+                    <TextBlock x:Name="ErrorText" Foreground="DarkRed" Margin="4,8,4,0" TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Margin="4,20,4,0">
+                    <Button Content="دخول" Height="46" Background="#1F2937" Foreground="White" BorderThickness="0" Click="Login_Click"/>
+                    <Button Content="إصلاح حساب المدير / إعادة كلمة المرور admin = 1234" Height="36" Click="ResetAdmin_Click"/>
+                </StackPanel>
+                <TextBlock Grid.Row="4" Text="Build 004" VerticalAlignment="Bottom" TextAlignment="Center" Foreground="#9CA3AF"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
